@@ -1,0 +1,2 @@
+file_server:lane_detect
+-DCATKIN_DEVEL_PREFIX=/home/kvu/Desktop/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/kvu/Desktop/catkin_ws/install -G Unix Makefiles
