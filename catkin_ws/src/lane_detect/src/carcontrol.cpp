@@ -2,8 +2,8 @@
 
 CarControl::CarControl()
 {
-    carPos.x = 140;
-    carPos.y = 220;
+    carPos.x = 160;
+    carPos.y = 180;
     //cvCreateTrackbar("kP", "Threshold", &kP, 50);
     //cvCreateTrackbar("kD", "Threshold", &kD, 50);
     steer_publisher = node_obj1.advertise<std_msgs::Float32>("Team1_steerAngle",10);
@@ -20,20 +20,21 @@ float CarControl::errorAngle(const Point &dst)
     return angle;
 }
 
-void CarControl::driverCar(const Point &cur, float velocity)
+void CarControl::driverCar(const pair<Point, int> &cur, float velocity)
 {
     std_msgs::Float32 angle;
-    std_msgs::Float32 speed;   
-    float error = errorAngle(cur);
+    std_msgs::Float32 speed;
+    carPos.x = 160;   
+    carPos.x += cur.second * auxTurn;
+    float error = -errorAngle(cur.first);
     
     //PID controller
     t_kP = error;
     t_kI += error;
     t_kD = error - preError;
     angle.data = kP * t_kP + kI * t_kI + kD * t_kD;
-    speed.data = velocity;
+    speed.data = fabs(error) < 1 ? maxVelocity : (velocity - fabs(error) * 0.5);
     preError = error;
-    cerr << error << '\n';
     steer_publisher.publish(angle);
     speed_publisher.publish(speed);    
 } 

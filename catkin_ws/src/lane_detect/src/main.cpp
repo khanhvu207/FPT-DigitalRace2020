@@ -23,7 +23,7 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
     {
         cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
 	    waitKey(1);
-        car->driverCar(detect->calculateError(cv_ptr->image), 60);
+        car->driverCar(detect->calculateError(cv_ptr->image), 40);
     }
     catch (cv_bridge::Exception& e)
     {
@@ -47,7 +47,8 @@ void videoProcess()
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "image_listener");
-    cv::namedWindow("Threshold");
+    //cv::namedWindow("Threshold");
+    //cv::namedWindow("zoom");
     detect = new DetectLane();
     car = new CarControl();
     if (STREAM) {
@@ -56,7 +57,6 @@ int main(int argc, char **argv)
         ros::NodeHandle nh;
         image_transport::ImageTransport it(nh);
         image_transport::Subscriber sub = it.subscribe("Team1_image", 1, imageCallback);
-
         ros::spin();
     } else {
         videoProcess();

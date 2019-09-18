@@ -19,16 +19,31 @@ class DetectLane
 public:
     DetectLane();
     ~DetectLane();
-    Point calculateError(const Mat &src);
+    pair<Point, int> calculateError(const Mat &src);
+    Mat ROI(const Mat &src);
+    Mat birdviewTransformation(const Mat &src);
+    Mat ComputeHoughLines(const Mat &src, const Mat &ROI); 
+    void detectTrafficSigns(const Mat &src, Mat &blue, int &turnFactor);
 private:
     void drawLine(float slope, float y_intercept, Mat &HoughTransform);
-    int cannylow = 80;
-    int hough_lowerbound = 60;
+    int minThreshold[3] = {0, 0, 180};
+    int maxThreshold[3] = {179, 30, 255};
+    int vote = 8;
+    int cannylow = 100;
+    int hough_lowerbound = 40;
+    int skyline = 85;
+    int turnFactor = 0;
+    int oldTF = 0;
+
+    const int offsetX = 160;
+    const int offsetY = 180;
     const int max_houghThreshold = 200;
     const int max_cannylow = 100;
     const int cannyRatio = 3;
     const int kernelSize = 3;
     const float eps = 1e-7;
+    const int birdwidth = 240;
+    const int birdheight = 320;
     vector<Point> leftLane, rightLane;
 };
 #endif

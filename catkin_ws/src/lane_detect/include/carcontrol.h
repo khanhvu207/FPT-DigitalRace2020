@@ -21,7 +21,7 @@ class CarControl
 public:
     CarControl();
     ~CarControl();
-    void driverCar(const Point &cur, float velocity);
+    void driverCar(const pair<Point, int> &cur, float velocity);
 
 private:
     ros::NodeHandle node_obj1;
@@ -32,13 +32,15 @@ private:
     float errorAngle(const Point &dst);
     float laneWidth = 40;
     float minVelocity = 10;
-    float maxVelocity = 60;
+    float maxVelocity = 50;
     float preError;
-    float kP = 0.15;
-    float kI = 0.00031;
-    float kD = 1.3;
+    float kP = 1;
+    float kI = 0.00003;
+    float kD = 10;
     float t_kP = 0.0;
     float t_kI = 0.0;
     float t_kD = 0.0;
+
+    const int auxTurn = 40;    
 };
 #endif
