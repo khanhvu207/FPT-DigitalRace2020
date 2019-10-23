@@ -1,0 +1,2 @@
+file_server:lane_detect
+-DCATKIN_DEVEL_PREFIX=/home/kvu/Desktop/cds2018/devel -DCMAKE_INSTALL_PREFIX=/home/kvu/Desktop/cds2018/install -G Unix Makefiles

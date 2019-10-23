@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libapi_lane_detection.so -o /home/kvu/Desktop/cds2018/devel/lib/libapi_lane_detection.so CMakeFiles/api_lane_detection.dir/src/detectlane.cpp.o CMakeFiles/api_lane_detection.dir/src/carcontrol.cpp.o 

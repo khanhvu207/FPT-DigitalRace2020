@@ -1,0 +1,8 @@
+prefix=/home/kvu/Desktop/catkin_ws/src/lane_detect/cmake-build-debug/devel
+
+Name: lane_detect
+Description: Description of lane_detect
+Version: 0.0.0
+Cflags: -I/home/kvu/Desktop/catkin_ws/src/lane_detect/include
+Libs: -L/home/kvu/Desktop/catkin_ws/src/lane_detect/cmake-build-debug/devel/lib -lapi_lane_detection
+Requires: roscpp

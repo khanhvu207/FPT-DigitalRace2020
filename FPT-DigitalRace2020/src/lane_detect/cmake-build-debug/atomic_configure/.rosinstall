@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/kvu/Desktop/catkin_ws/src/lane_detect/cmake-build-debug/devel/setup.sh

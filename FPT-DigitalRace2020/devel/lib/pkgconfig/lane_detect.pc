@@ -1,0 +1,8 @@
+prefix=/home/kvu/Desktop/cds2019/devel
+
+Name: lane_detect
+Description: Description of lane_detect
+Version: 0.0.0
+Cflags: -I/home/kvu/Desktop/cds2019/src/lane_detect/include
+Libs: -L/home/kvu/Desktop/cds2019/devel/lib -lapi_lane_detection
+Requires: roscpp

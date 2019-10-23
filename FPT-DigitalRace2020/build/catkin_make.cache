@@ -1,0 +1,2 @@
+file_server:lane_detect:video_stream
+-DCATKIN_DEVEL_PREFIX=/home/kvu/Desktop/cds2019/devel -DCMAKE_INSTALL_PREFIX=/home/kvu/Desktop/cds2019/install -G Unix Makefiles
