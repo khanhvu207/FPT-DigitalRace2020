@@ -1,8 +1,0 @@
-prefix=/home/kvu/Desktop/catkin_ws/install
-
-Name: file_server
-Description: Description of file_server
-Version: 1.0.0
-Cflags: -I/home/kvu/Desktop/catkin_ws/install/include
-Libs: -L/home/kvu/Desktop/catkin_ws/install/lib -lfile_services
-Requires: roscpp rospy std_msgs roslib message_runtime
