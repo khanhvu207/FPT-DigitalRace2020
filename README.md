@@ -29,7 +29,7 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 ### Car controlling (tools: PID controller)
 [Code](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/FPT-DigitalRace2020/src/lane_detect/src/carcontrol.cpp) 
 1. Set an offset point that represent your car's position (the red point).
-2. Set an green point which has the same Y-coordinate as the red point, and lays in the bisector of the two green Hough lines.
+2. Set a green point which has the same Y-coordinate as the red point, and lays in the bisector of the two green Hough lines.
 3. Compute the relative distance between the red point and the green point.
 4. Use the above distance as a error parameter of PID controller.
 
