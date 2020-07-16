@@ -5,7 +5,7 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 ## Description
 ### Environment 
 * The contest used Unity as a simulator.  
-* [ROS](https://www.ros.org/) was used to communicate with the simulator (transfering frames, sending car speeds/steering angles between ROS nodes).
+* [ROS](https://www.ros.org/) was used to communicate with the simulator (transfering frames, sending car speeds/steering angles between ROS nodes).  
 ![sim](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/sim.JPG)
 
 ### Lane detection (tools: C++ and OpenCV3)
