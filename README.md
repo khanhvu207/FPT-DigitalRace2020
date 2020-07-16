@@ -14,7 +14,7 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 2. Convert color space from RGB to HSV.
 3. Perform [image thresholding](https://docs.opencv.org/master/d7/d4d/tutorial_py_thresholding.html) to extract the roadsides.  
 ![img_thresholding](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/img_thresholding.JPG)  
-4. I used [Hough Line Transform](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html) to get two straight lines which almost the regression lines of the two roadsides. The reason why I did not do the normal lines regression is Hough lines definitely go through points, where regression lines sometimes do not.  
+4. I used [Hough Line Transform](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html) to get two straight lines which almost the regression lines of the two roadsides. The reason why I did not do the normal lines regression is that Hough lines definitely go through points, where regression lines sometimes do not.  
 ![hough](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/hough.JPG).
 5. Create birdview scene for future usages.  
 ![birdview](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/birdview.JPG).
