@@ -8,7 +8,7 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 * [ROS](https://www.ros.org/) was used to communicate with the simulator (transfering frames, sending car speeds/steering angles between ROS nodes).  
 ![sim](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/sim.JPG)
 
-### Lane detection (tools: C++ and OpenCV3)
+### Lanes detection (tools: C++ and OpenCV3)
 [Code](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/FPT-DigitalRace2020/src/lane_detect/src/detectlane.cpp)  
 1. Receive raw images from ROS server.
 2. Convert color space from RGB to HSV.
@@ -20,7 +20,7 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 ![birdview](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/birdview.JPG).
 6. To suppress the shadows created by trees, I again used color thresholing and did the bitwise-OR to combine two binary images.   
 
-### Sign detection 
+### Signs detection 
 1. Perform image thresholding to extract the **blue** color.
 2. I used the [findContour](https://docs.opencv.org/2.4/doc/tutorials/imgproc/shapedescriptors/find_contours/find_contours.html) to detect round shapes in the binary image. Here, we could possibly use the [Hough Circle Transform](https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html) to detect the sign. The Hough circle transform didn't work well for me, since from the car's perspective, signs always look like an oval shape and I had an hard time tuning those params :(. After the sign's position have been determined, just put a minimum bounding box that encloses our sign.  
 ![sign](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/sign.JPG)
