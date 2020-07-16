@@ -20,14 +20,14 @@ The platform that I used for this personal project is from [FPT Digital Race 202
 ![birdview](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/birdview.JPG).
 6. To suppress the shadows created by trees, I again used color thresholing and did the bitwise-OR to combine two binary images.   
 
-### Sign detection
-[Code](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/FPT-DigitalRace2020/src/lane_detect/src/carcontrol.cpp)  
+### Sign detection 
 1. Perform image thresholding to extract the **blue** color.
 2. I used the [findContour](https://docs.opencv.org/2.4/doc/tutorials/imgproc/shapedescriptors/find_contours/find_contours.html) to detect round shapes in the binary image. Here, we could possibly use the [Hough Circle Transform](https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html) to detect the sign. The Hough circle transform didn't work well for me, since from the car's perspective, signs always look like an oval shape and I had an hard time tuning those params :(. After the sign's position have been determined, just put a minimum bounding box that encloses our sign.  
 ![sign](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/img/sign.JPG)
 3. To know whether the sign is the left sign or right sign, I splitted the box and count white pixels in each half (not so efficient, but simple!).
 
 ### Car controlling (tools: PID controller)
+[Code](https://github.com/khanhvu207/FPT-DigitalRace2020/blob/master/FPT-DigitalRace2020/src/lane_detect/src/carcontrol.cpp) 
 1. Set an offset point that represent your car's position (the red point).
 2. Set an green point which has the same Y-coordinate as the red point, and lays in the bisector of the two green Hough lines.
 3. Compute the relative distance between the red point and the green point.
